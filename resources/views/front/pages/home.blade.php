@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row px-5">
-    <div class="col-sm-6 col-lg-4 offset-lg-8">
+    <div class="col-sm-6 col-lg-4 offset-sm-3 offset-lg-8">
         <div class="login-form shadow-sm">
             <div class="text-center">
                 <div class="image-logo px-5 mb-1">
