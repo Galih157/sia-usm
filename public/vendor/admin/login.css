@@ -1,0 +1,23 @@
+body {
+    background-color: #fff9ef;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position-y: 64px;
+    background-position-x: 20px;
+}
+
+.left-side img {
+    width: 100%;
+    height: auto;
+}
+
+.login-form {
+    margin-top: 54px;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.login-form .image-logo img {
+    width: 96px;
+}
