@@ -11,7 +11,7 @@
                 <p style="margin: 0;">Jumlah Mahasiswa : {{ $stats['mahasiswa'] }}</p>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-block btn-primary">Kelola Mahasiswa</a>
+                <a href="{{ route('admin.mahasiswa.index') }}" class="btn btn-block btn-primary">Kelola Mahasiswa</a>
             </div>
         </div>
     </div>

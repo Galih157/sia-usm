@@ -24,5 +24,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::middleware(['auth:admin'])->group(function () {
         Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
+
+        Route::group(['prefix' => 'mahasiswa', 'namespace' => 'Mahasiswa'], function () {
+            Route::get('/', 'MahasiswaController@index')->name('admin.mahasiswa.index');
+            Route::get('/create', 'MahasiswaController@create')->name('admin.mahasiswa.create');
+            Route::post('/create', 'MahasiswaController@store');
+            Route::get('/{id}', 'MahasiswaController@show')->name('admin.mahasiswa.show');
+            Route::post('/{id}', 'MahasiswaController@update');
+            Route::post('/{id}/delete', 'MahasiswaController@destroy')->name('admin.mahasiswa.delete');
+        });
     });
 });
