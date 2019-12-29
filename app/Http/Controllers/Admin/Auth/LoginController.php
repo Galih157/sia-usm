@@ -20,8 +20,10 @@ class LoginController extends Controller
     public function submitLogin()
     {
         $credentials = request()->only(['username', 'password']);
-        auth('admin')->attempt($credentials);
+        $attempt = auth('admin')->attempt($credentials);
 
-        return response($credentials);
+        if (!$attempt) return redirect()->back();
+
+        return redirect(route('admin.dashboard'));
     }
 }

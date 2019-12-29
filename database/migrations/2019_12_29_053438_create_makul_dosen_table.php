@@ -13,9 +13,16 @@ class CreateMakulDosenTable extends Migration
      */
     public function up()
     {
-        Schema::create('makul_dosen', function (Blueprint $table) {
+        Schema::create('kelas_dosen', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_makul')->unsigned();
+            $table->bigInteger('id_dosen')->unsigned();
+            $table->integer('hari'); // weekday 1 = Senin dst.
+            $table->time('waktu');
             $table->timestamps();
+
+            $table->foreign('id_makul')->references('id')->on('makul');
+            $table->foreign('id_dosen')->references('id')->on('dosen');
         });
     }
 
