@@ -38,13 +38,13 @@
                         <a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fa fa-archive"></i> Dashboard</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.prodi.index') }}"><i class="fa fa-university"></i> Program Studi</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-user-tie"></i> Dosen</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.mahasiswa.index') }}"><i class="fa fa-user-graduate"></i> Mahasiswa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-university"></i> Program Studi</a>
                     </li>
                 </ul>
             </div>

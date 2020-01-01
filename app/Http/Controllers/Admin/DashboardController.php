@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Dosen;
+use App\Models\Mahasiswa;
+use App\Models\Prodi;
 
 class DashboardController extends Controller
 {
@@ -11,8 +13,8 @@ class DashboardController extends Controller
     {
         $stats = collect([
             'dosen' => Dosen::count('id'),
-            'mahasiswa' => 0,
-            'prodi' => 0,
+            'mahasiswa' => Mahasiswa::count('nim'),
+            'prodi' => Prodi::count('id'),
         ]);
 
         return view('admin.dashboard.index')
