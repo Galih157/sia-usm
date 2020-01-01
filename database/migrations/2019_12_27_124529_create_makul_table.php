@@ -15,13 +15,10 @@ class CreateMakulTable extends Migration
     {
         Schema::create('makul', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_prodi')->unsigned();
             $table->integer('sks');
             $table->string('kode');
             $table->string('nama');
             $table->timestamps();
-
-            $table->foreign('id_prodi')->references('id')->on('prodi')->onDelete('CASCADE');
         });
     }
 

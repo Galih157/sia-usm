@@ -30,29 +30,34 @@
         </div>
     </nav>
 
-    <div class="row p-2">
-        <div class="col-lg-2">
-            <div class="side-nav rounded-sm shadow-sm p-2">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fa fa-archive"></i> Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.prodi.index') }}"><i class="fa fa-university"></i> Program Studi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.dosen.index') }}"><i class="fa fa-user-tie"></i> Dosen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.mahasiswa.index') }}"><i class="fa fa-user-graduate"></i> Mahasiswa</a>
-                    </li>
-                </ul>
+    <div class="container-fluid">
+        <div class="row py-2">
+            <div class="col-lg-2">
+                <div class="side-nav rounded-sm shadow-sm p-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fa fa-archive"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.prodi.index') }}"><i class="fa fa-university"></i> Program Studi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.makul.index') }}"><i class="fa fa-book"></i> Mata Kuliah</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.dosen.index') }}"><i class="fa fa-user-tie"></i> Dosen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.mahasiswa.index') }}"><i class="fa fa-user-graduate"></i> Mahasiswa</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-10">
-            <div class="container-fluid p-2">
-                <div class="content">
-                    @yield('content')
+            <div class="col-lg-10">
+                <div class="container-fluid p-2">
+                    <div class="content">
+                        @yield('content')
+                    </div>
                 </div>
             </div>
         </div>

@@ -17,12 +17,14 @@ class CreateMakulDosenTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_makul')->unsigned();
             $table->bigInteger('id_dosen')->unsigned();
-            $table->integer('hari'); // weekday 1 = Senin dst.
+            $table->bigInteger('id_prodi')->unsigned();
+            $table->integer('hari'); // weekday 1 = Senin, 2 = Selasa dst.
             $table->time('waktu');
             $table->timestamps();
 
-            $table->foreign('id_makul')->references('id')->on('makul');
-            $table->foreign('id_dosen')->references('id')->on('dosen');
+            $table->foreign('id_makul')->references('id')->on('makul')->onDelete('CASCADE');
+            $table->foreign('id_dosen')->references('id')->on('dosen')->onDelete('CASCADE');
+            $table->foreign('id_prodi')->references('id')->on('dosen')->onDelete('CASCADE');
         });
     }
 
