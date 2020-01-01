@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         return redirect(route('admin.dashboard'));
     });
 
-    Route::get('/auth/logout', 'DashboardController@index')->name('admin.auth.logout');
+    Route::get('/auth/logout', 'Auth\LogoutController@logout')->name('admin.auth.logout');
     Route::get('/auth/login', 'Auth\LoginController@index')->name('admin.auth.login');
     Route::post('/auth/login', 'Auth\LoginController@submitLogin');
 
