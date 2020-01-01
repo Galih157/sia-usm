@@ -26,6 +26,6 @@ class DatabaseSeeder extends Seeder
         $prodi->kode = "S1_TI_231";
         $prodi->save();
 
-        factory(App\Models\Dosen::class, 10)->create();
+        // factory(App\Models\Dosen::class, 10)->create();
     }
 }
