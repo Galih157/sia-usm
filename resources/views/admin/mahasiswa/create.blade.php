@@ -5,7 +5,7 @@
 @section('content')
 <div class="rounded-sm shadow-sm p-2">
     <div class="p-3">
-        <h4 class="mb-3">Data Mahasiswa</h4>
+        <h4 class="mb-3">Tambah Mahasiswa</h4>
         <form action="{{ route('admin.mahasiswa.create') }}" method="post">
             @csrf
             <div class="form-group">
@@ -26,6 +26,17 @@
                 <label for="email">Email</label>
                 <input type="text" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" name="email" required>
                 @error('email')
+                <div class="text-danger validate-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="id_prodi">Pilih Prodi</label>
+                <select name="id_prodi" id="id_prodi" class="form-control @error('id_prodi') is-invalid @enderror" required>
+                    @foreach($semua_prodi as $prodi)
+                    <option value="{{ $prodi->id }}">{{ $prodi->nama }}</option>
+                    @endforeach
+                </select>
+                @error('jenis_kelamin')
                 <div class="text-danger validate-feedback">{{ $message }}</div>
                 @enderror
             </div>

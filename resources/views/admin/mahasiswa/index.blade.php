@@ -25,7 +25,7 @@
                 <tr>
                     <td>{{ $mahas->nim }}</td>
                     <td>{{ $mahas->nama }}</td>
-                    <td>{{ $mahas->nim }}</td>
+                    <td>{{ $mahas->prodi['nama'] }}</td>
                 </tr>
                 @endforeach
             </tbody>
