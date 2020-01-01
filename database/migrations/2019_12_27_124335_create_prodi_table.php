@@ -17,6 +17,7 @@ class CreateProdiTable extends Migration
             $table->bigIncrements('id');
             $table->string('kode');
             $table->string('nama');
+            $table->text('description');
             $table->timestamps();
         });
     }
