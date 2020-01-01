@@ -52,6 +52,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
             Route::post('/{id}/delete', 'MakulController@destroy')->name('admin.makul.delete');
         });
 
+        Route::group(['prefix' => 'kelas', 'namespace' => 'Dosen'], function () {
+            Route::get('/', 'KelasController@index')->name('admin.kelas.index');
+            Route::get('/create', 'KelasController@create')->name('admin.kelas.create');
+            Route::post('/create', 'KelasController@store');
+            Route::get('/{id}', 'KelasController@show')->name('admin.kelas.show');
+            Route::post('/{id}', 'KelasController@update');
+            Route::post('/{id}/delete', 'KelasController@destroy')->name('admin.kelas.delete');
+        });
+
         Route::group(['prefix' => 'mahasiswa', 'namespace' => 'Mahasiswa'], function () {
             Route::get('/', 'MahasiswaController@index')->name('admin.mahasiswa.index');
             Route::get('/create', 'MahasiswaController@create')->name('admin.mahasiswa.create');

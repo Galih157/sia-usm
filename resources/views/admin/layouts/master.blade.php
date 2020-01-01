@@ -48,6 +48,9 @@
                             <a class="nav-link" href="{{ route('admin.dosen.index') }}"><i class="fa fa-user-tie"></i> Dosen</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.kelas.index') }}"><i class="fa fa-calendar-alt"></i> Jadwal Kuliah</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.mahasiswa.index') }}"><i class="fa fa-user-graduate"></i> Mahasiswa</a>
                         </li>
                     </ul>
