@@ -13,10 +13,37 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::get('/', function () {
-        return redirect(route('admin.dashboard'));
+Route::group(['prefix' => 'mahasiswa', 'namespace' => 'Mahasiswa'], function () {
+    Route::redirect('/', '/mahasiswa/dashboard');
+
+    Route::get('/auth/login', 'Auth\LoginController@index')->name('mahasiswa.auth.login');
+    Route::post('/auth/login', 'Auth\LoginController@submitLogin');
+
+    Route::middleware(['auth:mahasiswa'])->group(function () {
+        Route::get('/dashboard', 'DashboardController@index')->name('mahasiswa.dashboard');
+
+        Route::group(['prefix' => 'kelas'], function () {
+            Route::get('/', 'KelasController@index')->name('mahasiswa.kelas.index');
+            Route::get('/create', 'KelasController@create')->name('mahasiswa.kelas.create');
+            Route::post('/create', 'KelasController@store');
+            Route::get('/{id}', 'KelasController@show')->name('mahasiswa.kelas.show');
+            Route::post('/{id}', 'KelasController@update');
+            Route::post('/{id}/delete', 'KelasController@destroy')->name('mahasiswa.kelas.delete');
+        });
+
+        Route::group(['prefix' => 'nilai'], function () {
+            Route::get('/', 'NilaiController@index')->name('mahasiswa.nilai.index');
+            Route::get('/create', 'NilaiController@create')->name('mahasiswa.nilai.create');
+            Route::post('/create', 'NilaiController@store');
+            Route::get('/{id}', 'NilaiController@show')->name('mahasiswa.nilai.show');
+            Route::post('/{id}', 'NilaiController@update');
+            Route::post('/{id}/delete', 'NilaiController@destroy')->name('mahasiswa.nilai.delete');
+        });
     });
+});
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::redirect('/', '/admin/dashboard');
 
     Route::get('/auth/logout', 'Auth\LogoutController@logout')->name('admin.auth.logout');
     Route::get('/auth/login', 'Auth\LoginController@index')->name('admin.auth.login');

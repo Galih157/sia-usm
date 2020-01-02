@@ -5,6 +5,21 @@
 @section('content')
 <div class="row px-5">
     <div class="col-sm-6 col-lg-4 offset-sm-3 offset-lg-8">
+        @auth('mahasiswa')
+        <div class="login-form shadow-sm">
+            <div class="text-center">
+                <div class="image-logo px-5 mb-1">
+                    <img src="{{ asset('images/logo-usm.png') }}" alt="">
+                </div>
+                <p>Selamat datang {{ auth('mahasiswa')->user()->nama }}</p>
+            </div>
+            <div class="px-4 pb-4">
+                <a href="{{ route('mahasiswa.dashboard') }}" class="btn btn-primary btn-block">Ke Dashboard</a>
+            </div>
+        </div>
+        @endauth
+
+        @guest('mahasiswa')
         <div class="login-form shadow-sm">
             <div class="text-center">
                 <div class="image-logo px-5 mb-1">
@@ -28,6 +43,7 @@
                 </form>
             </div>
         </div>
+        @endguest
     </div>
 </div>
 @endsection
