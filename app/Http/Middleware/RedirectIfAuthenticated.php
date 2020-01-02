@@ -25,5 +25,9 @@ class RedirectIfAuthenticated
         if ($guard === 'admin') {
             return redirect(route('admin.dashboard'));
         }
+
+        if ($guard === 'mahasiswa') {
+            return redirect(route('mahasiswa.dashboard'));
+        }
     }
 }

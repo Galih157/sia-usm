@@ -16,6 +16,9 @@ class CreateJadwalMahasiswaTable extends Migration
         Schema::create('jadwal_mahasiswa', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nim');
+            $table->integer('semester')->default(1);
+            $table->string('ipk')->nullable();
+            $table->boolean('lulus')->nullable();
             $table->bigInteger('id_kelas_dosen')->unsigned();
             $table->timestamps();
 
