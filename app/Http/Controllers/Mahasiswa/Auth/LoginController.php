@@ -19,10 +19,10 @@ class LoginController extends Controller
 
     public function submitLogin()
     {
-        $credentials = request()->only(['username', 'password']);
+        $credentials = request()->only(['nim', 'password']);
         $attempt = auth('mahasiswa')->attempt($credentials);
 
-        if (!$attempt) return redirect()->back();
+        if (!$attempt) return redirect()->back()->withErrors(['message' => "NIM atau Password salah, silahkan coba lagi."]);
 
         return redirect(route('mahasiswa.dashboard'));
     }

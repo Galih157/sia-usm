@@ -16,7 +16,7 @@
 <body>
 
     <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm">
-        <a class="navbar-brand" href="{{ route('admin.dashboard') }}">Admin</a>
+        <a class="navbar-brand" href="{{ route('mahasiswa.dashboard') }}">Portal Mahasiswa</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.auth.logout') }}"><i class="fa fa-sign-out-alt"></i> Log out</a>
+                    <a class="nav-link" href="{{ route('mahasiswa.auth.logout') }}"><i class="fa fa-sign-out-alt"></i> Log out</a>
                 </li>
             </ul>
         </div>

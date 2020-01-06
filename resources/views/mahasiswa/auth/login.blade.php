@@ -30,8 +30,8 @@
                         <form action="{{ route('mahasiswa.auth.login') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" name="username" class="form-control">
+                                <label for="nim">NIM</label>
+                                <input type="text" name="nim" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>

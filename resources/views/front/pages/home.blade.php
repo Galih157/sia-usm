@@ -28,7 +28,11 @@
                 <p>Selamat datang di SIA USM</p>
             </div>
             <div class="px-4">
-                <form action="" method="post">
+                <form action="{{ route('mahasiswa.auth.login') }}" method="post">
+                    @foreach($errors->all() as $error)
+                    <div class="alert alert-danger">{{ $error }}</div>
+                    @endforeach
+                    @csrf
                     <div class="form-group">
                         <label for="nim">NIM</label>
                         <input type="text" name="nim" class="form-control">

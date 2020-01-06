@@ -17,6 +17,7 @@ Route::group(['prefix' => 'mahasiswa', 'namespace' => 'Mahasiswa'], function () 
     Route::redirect('/', '/mahasiswa/dashboard');
 
     Route::get('/auth/login', 'Auth\LoginController@index')->name('mahasiswa.auth.login');
+    Route::get('/auth/logout', 'Auth\LogoutController@logout')->name('mahasiswa.auth.logout');
     Route::post('/auth/login', 'Auth\LoginController@submitLogin');
 
     Route::middleware(['auth:mahasiswa'])->group(function () {
