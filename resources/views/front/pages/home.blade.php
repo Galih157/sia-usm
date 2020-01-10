@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title') Hello World @endsection
+@section('title') Selamat Datang di SIA USM @endsection
 
 @section('content')
 <div class="row px-5">
